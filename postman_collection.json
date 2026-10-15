@@ -1,0 +1,196 @@
+{
+  "info": {
+    "_postman_id": "a82b9920-5621-4f11-9a72-68c92a95c3ef",
+    "name": "Average REST API Collection",
+    "description": "Collection for testing the POST /average REST API server.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. POST /average (Positive Integer)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"number\": 10\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Submit a positive integer to calculate the running average."
+      },
+      "response": []
+    },
+    {
+      "name": "2. POST /average (Second Number)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"number\": 20\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Submit a second number. The average of 10 and 20 should be 15."
+      },
+      "response": []
+    },
+    {
+      "name": "3. POST /average (Negative Number)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"number\": -6\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Submit a negative number."
+      },
+      "response": []
+    },
+    {
+      "name": "4. POST /average (Floating Point / Decimal)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"number\": 3.5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Submit a decimal number."
+      },
+      "response": []
+    },
+    {
+      "name": "5. POST /average (Validation Error - Missing Number)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"invalid\": \"abc\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Expects 400 Bad Request error."
+      },
+      "response": []
+    },
+    {
+      "name": "6. GET /average (View Current Stats)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/average",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average"
+          ]
+        },
+        "description": "Retrieve current average, count, sum, and numbers history."
+      },
+      "response": []
+    },
+    {
+      "name": "7. POST /average/reset (Reset Counter)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/average/reset",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "average",
+            "reset"
+          ]
+        },
+        "description": "Resets cumulative statistics back to zero."
+      },
+      "response": []
+    }
+  ]
+}
